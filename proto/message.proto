@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package messages;
+
+option go_package = ".;messages";
+
+// Message Service
+service MessageService {
+  // CreateConversation
+  rpc CreateConversation(CreateConversationRequest) returns (CreateConversationResponse) {};
+
+  // CreateMessage
+  rpc CreateMessage(stream Message) returns (stream CreateMessageRes) {};
+}
+
+// CreateConversationRequest
+message CreateConversationRequest {
+  // The conversation name
+  string name = 1;
+}
+
+// CreateConversationResponse
+message CreateConversationResponse {
+  // The conversation id
+  string id = 1;
+}
+
+// The request message
+message Message {
+  // Message name
+  string name = 1;
+  // Message Text
+  string text = 2;
+  // Message Sender
+  string sender = 3;
+  // Conversation ID
+  string conversation_name = 4;
+}
+
+// The response message
+message CreateMessageRes {
+  // Message recieved by server
+  bool success = 2;
+}
