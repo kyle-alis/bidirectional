@@ -90,11 +90,11 @@ func bulkUsers(c users.UsersClient) {
 
 // initUsers function
 func (c container) initUsers() []*users.User {
-	c.users = append(c.users, c.getUser("1", "Carl", "Phill", 23))
+	c.users = append(c.users, c.getUser("2", "Carl", "Phill", 23))
 	c.users = append(c.users, c.getUser("2", "Marisol", "Richardson", 29))
-	c.users = append(c.users, c.getUser("3", "Mia", "Phill", 27))
-	c.users = append(c.users, c.getUser("4", "Tomas", "Smith", 25))
-	c.users = append(c.users, c.getUser("5", "Zian", "Heat", 28))
+	c.users = append(c.users, c.getUser("2", "Mia", "Phill", 27))
+	c.users = append(c.users, c.getUser("2", "Tomas", "Smith", 25))
+	c.users = append(c.users, c.getUser("2", "Zian", "Heat", 28))
 
 	return c.users
 }
